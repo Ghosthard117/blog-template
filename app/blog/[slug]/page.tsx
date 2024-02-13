@@ -13,7 +13,7 @@ async function getData(slug: string) {
           title,
           content,
           author,
-          // titleImage
+          titleImage
       }[0]`;
 
   const data = await client.fetch(query);
@@ -39,14 +39,14 @@ export default async function BlogArticle({
       </h1>
 
       {/* Error 505 ???? */}
-      {/* <Image
+      <Image
         src={urlFor(data.titleImage).url()}
         width={800}
         height={800}
         alt="Title Image"
         priority
         className="rounded-lg mt-8 border"
-      /> */}
+      />
 
       <div className="mt-16 mb-16 prose prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
         <PortableText value={data.content} />
